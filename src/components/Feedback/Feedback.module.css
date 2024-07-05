@@ -1,0 +1,29 @@
+.feedback {
+  display: flex;
+
+  gap: 10px;
+}
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.feedbackButton {
+  background-color: #007bff;
+  color: #ebdddd;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.feedbackButton:hover {
+  background-color: #0056b3;
+}
+
+.feedbackButton:disabled {
+  background-color: #d6d6d6;
+  cursor: not-allowed;
+}
