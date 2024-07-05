@@ -5,16 +5,10 @@ import Notification from "./Notification/Notification";
 import css from "./App.module.css";
 
 const App = () => {
-  const [feedback, setFeedback] = useState({ good: 0, neutral: 0, bad: 0 });
-
-  useEffect(() => {
-    const savedFeedback = JSON.parse(localStorage.getItem("feedback")) || {
-      good: 0,
-      neutral: 0,
-      bad: 0,
-    };
-    setFeedback(savedFeedback);
-  }, []);
+  const [feedback, setFeedback] = useState(() => {
+    const savedFeedback = JSON.parse(localStorage.getItem("feedback"));
+    return savedFeedback || { good: 0, neutral: 0, bad: 0 };
+  });
 
   useEffect(() => {
     localStorage.setItem("feedback", JSON.stringify(feedback));
